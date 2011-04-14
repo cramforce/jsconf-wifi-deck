@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--
+Presentation Software
+Copyright 2010 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+     http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Original HTML5 slides:
+    Marcin Wichary (mwichary)
+    
+Modifications:
+    Ernest Delgado (ernestd)
+    Alex Russell (slightlyoff)
+    Mihai Ionescu (mihai)
+    Arne Roomann-Kurrik (kurrik)
+    Eric Bidelman (ericbidelman)
+		Malte Ubl (malteubl)
+
+-->
+<html>
+  <head>
+    <title>Conference WIFI Redux</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+    <link rel="stylesheet" href="css/prettify.css"/>
+    <link rel="stylesheet" href="css/slide-presentation.css"/>
+    <link rel="stylesheet" href="css/slide-content.css"/>
+    <script src="js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="presentation">
+      <div class="presentationCounter">Loading...</div>
+      <div class="slides">
+        
+<div class="slide titleSlide">
+  <section class="flex vbox boxcenter">
+    <hgroup>
+      <h1 class="html5">Conference WIFI Redux</h1>
+    </hgroup>
+  </section>
+</div>
+
+<div class="slide transitionSlide">
+  <section class="flex hbox boxcenter">
+      <div style="width:323px;">
+        <br><img src="images/meno.jpg"><br>
+        <strong>Meno Abels</strong><br>
+        <a href="http://twitter.com/fastandfearless">@fastandfearless</a><br><br>
+        <i>Windows 2.0 TCP/IP Stack Programmer</i>
+      </div>
+      <div style="width:323px;">
+        <br><img src="images/malte.jpg"><br>
+        <strong>Malte Ubl</strong><br>
+        <a href="http://twitter.com/cramforce">@cramforce</a><br><br>
+        <i>Normal Programmer</i>
+      </div>
+  </section>
+</div>
+
+<div class="slide image" data-image="images/fullslides/failwin.jpg">
+  <div data-build>
+    <section class="topWide dark">
+      <h1>Already failed?</h1>
+    </section>
+    <section class="bottomWide dark">
+      <h1>Or still hanging in there?</h1>
+    </section>
+  </div>
+</div>
+
+<div class="slide image" data-image="images/fullslides/many_devices.jpg">
+  <div>
+    <section class="topWide dark">
+      <h1>2-3 devices per attendee in 2009</h1>
+    </section>
+    <div data-build>
+      <section class="bottomRight dark">
+        <h1>That was before the iPad!</h1>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="slide image" data-image="images/fullslides/lots_of_people.jpg">
+  <div>
+    <section class="topWide dark">
+      <h1>Up to 100 people per AP</h1>
+    </section>
+  </div>
+</div>
+
+<div class="slide">
+  <header>Wifi at conferences</header>
+  <section>
+    <ul>
+      <li>Maximum 11 WIFI channels</li>
+      <li>Temporary setup</li>
+      <li>Unknown setup (building, connection, ...)</li>
+      <li>Massive uploads</li>
+    </ul>
+  </section>
+</div>
+
+<div class="slide image" data-image="images/fullslides/construction.jpg">
+  <div>
+    <section class="topLeft dark">
+      <h1>Various asymetric up- and downlinks</h1>
+    </section>
+    <section class="bottomLeft dark">
+      <h1>Take all you can get</h1>
+    </section>
+  </div>
+</div>
+
+<div class="slide image" data-image="images/fullslides/underberg.jpg">
+  <div>
+    <section class="bottomLeft dark">
+      <h1>Load Balancing</h1>
+    </section>
+  </div>
+</div>
+
+<div class="slide">
+  <header>HTTP style load balancing for IP</header>
+  <section>
+    <ul>
+      <li>Link aggregation</li>
+      <li>...based on bandwidth</li>
+      <li>...in both directions</li>
+    </ul>
+  </section>
+</div>
+
+<div class="slide image" data-image="images/fullslides/bad_ass.jpg">
+  <div>
+    <section class="topLeft dark">
+      <h1>First implementation that doesn't suck*</h1>
+    </section>
+    <section class="bottomRight dark">
+      <h1>*see mppp</h1>
+    </section>
+  </div>
+</div>
+
+<div class="slide image" data-image="images/fullslides/tom.jpg">
+  <div>
+    <section class="bottomWide dark">
+      <h1>Did we mention it runs on Node?</h1>
+    </section>
+  </div>
+</div>
+
+<div class="slide image" data-image="images/fullslides/sashimi.jpg">
+  <div>
+    <section class="topWide dark">
+      <h1>Introducing Sashimi</h1>
+    </section>
+  </div>
+  <span class="credit">
+	  http://www.flickr.com/photos/sifu_renka/2435010381/sizes/l/in/photostream/
+	</span>
+</div>
+
+<div class="slide">
+  <header>Sashimi</header>
+  <section>
+    <ul>
+      <li>Packet knife</li>
+      <li>Based on Tun C Library –<br> IP packet reading/writing in user space</li>
+      <li>IP over TCP/IP</li>
+      <li>JavaScript API!!!!!</li>
+    </ul>
+  </section>
+</div>
+
+<div class="slide">
+  <header>Slide showing the actual links and Rackspace endpoint</header>
+  <section>
+  </section>
+</div>
+
+<div class="slide">
+  <header>Message over stream protocol</header>
+  <section>
+    <ul>
+      <li>Asynchronous message transport</li>
+      <li>Pascal style strings</li>
+    </ul>
+    <pre style="height:400px;overflow:auto;overflow-x:hidden;">
+Queue.prototype.add = function(obj, wait_len, found_fn) {
+  if (obj) { 
+    if (obj.len == 0) { return }
+    this.queue.push(obj) 
+  }
+  if (wait_len == 0) {
+    found_fn(new Buffer(0), "")
+    return
+  }
+  var segs = 0
+  var need = wait_len
+  for (var i in this.queue) {
+    var qe = this.queue[i] 
+    var diff = qe.len - qe.ofs
+    ++segs
+    if (diff gt;= need) { 
+      var buffer = new Buffer(wait_len)
+      var buffer_ofs = 0
+      for (var i = 0; i &lt; segs-1; ++i) {
+        /* all but last */
+        qe = this.queue.shift()
+        buffer.write(qe.data.slice(qe.ofs, qe.len), "binary", buffer_ofs)
+        buffer_ofs += qe.len - qe.ofs
+        delete qe
+      }
+      qe = this.queue[0]
+      buffer.write(qe.data.slice(qe.ofs, qe.ofs+need), "binary", buffer_ofs)
+      if (qe.ofs+need == qe.len) { delete this.queue.shift() }
+      else { this.queue[0].ofs += need }
+      found_fn(buffer, qe['test'] &amp;&amp; qe.test)
+      break
+    } 
+    need -= diff
+  }
+}
+    </pre>
+  </section>
+</div>
+
+
+<div class="slide image" data-image="images/fullslides/congestion2.jpg">
+  <div>
+    <section class="topLeft dark">
+      <h1>Congestion</h1>
+    </section>
+  </div>
+  <span class="credit">
+	  http://www.freefoto.com/preview/31-43-22?ffid=31-43-22
+	</span>
+</div>
+
+<div class="slide image" data-image="images/fullslides/joe.jpg">
+  <div>
+    <section class="topLeft dark">
+      <h1>Yo, Dawg!</h1>
+    </section>
+    
+    <div data-build>
+      <section class="bottomWide dark">
+        <h1> I'm backing up my bittorrent downloads to the cloud.</h1>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="slide image" data-image="images/fullslides/social.jpg">
+  <div>
+    <section class="bottomWide dark">
+      <h1>You need to add more social to the experience</h1>
+    </section>
+  </div>
+</div>
+
+<div class="slide">
+  <header>Demo Social-Traffic</header>
+  <section>
+  </section>
+</div>
+
+<div class="slide transitionSlide">
+  <section class="flex hbox boxcenter">
+    <h1 style="color:#e2007a;font-size:200px;">#poopin</h1>
+  </section>
+</div>
+
+<div class="slide">
+  <header>GitHub URLs</header>
+  <section>
+    <ul>
+      <li>...</li>
+    </ul>
+  </section>
+</div>
+
+
+<!--
+ *
+ * THANKs
+ *
+-->
+<div class="slide">
+  <section class="flex vbox boxcenter">
+    <h1>Thanks!</h1>
+    <p>Questions?</p>
+    <p>@fastandfearless<br>@cramforce</p>
+  </section>
+</div>
+      </div> <!-- slides -->
+    </div> <!-- presentation -->
+<script src="js/prettify.js"></script>
+<script src="js/slide-presentation.js"></script>
+<script src="js/box2d.min.js"></script>
+<script src="js/slide-content.js"></script>
+<script src="js/dnd-lib.js"></script>
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+  </body>
+</html>
