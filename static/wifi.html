@@ -40,12 +40,16 @@ Modifications:
       <div class="presentationCounter">Loading...</div>
       <div class="slides">
         
-<div class="slide titleSlide">
-  <section class="flex vbox boxcenter">
+<div class="slide title">
+  <!--<section class="flex vbox boxcenter">
     <hgroup>
       <h1 class="html5">Conference WIFI Redux</h1>
     </hgroup>
-  </section>
+  </section> -->
+  <video src="video/intro.webm" style="" buffer loop></video>
+  <header>
+    <h1>Conference WIFI Redux</h1>
+  </header>
 </div>
 
 <div class="slide transitionSlide">
@@ -66,13 +70,7 @@ Modifications:
 </div>
 
 <div class="slide image" data-image="images/fullslides/failwin.jpg">
-  <div data-build>
-    <section class="topWide dark">
-      <h1>Already failed?</h1>
-    </section>
-    <section class="bottomWide dark">
-      <h1>Or still hanging in there?</h1>
-    </section>
+  <div>
   </div>
 </div>
 
@@ -89,7 +87,7 @@ Modifications:
   </div>
 </div>
 
-<div class="slide image" data-image="images/fullslides/lots_of_people.jpg">
+<div class="slide image" data-image="images/fullslides/lots_of_people2.jpg">
   <div>
     <section class="topWide dark">
       <h1>Up to 100 people per AP</h1>
@@ -103,7 +101,7 @@ Modifications:
     <ul>
       <li>Maximum 11 WIFI channels</li>
       <li>Temporary setup</li>
-      <li>Unknown setup (building, connection, ...)</li>
+      <li>Many unknowns (building, connection, ...)</li>
       <li>Massive uploads</li>
     </ul>
   </section>
@@ -115,7 +113,7 @@ Modifications:
       <h1>Various asymetric up- and downlinks</h1>
     </section>
     <section class="bottomLeft dark">
-      <h1>Take all you can get</h1>
+      <h1>You take what you get</h1>
     </section>
   </div>
 </div>
@@ -158,7 +156,7 @@ Modifications:
   </div>
 </div>
 
-<div class="slide image" data-image="images/fullslides/sashimi.jpg">
+<div class="slide image" data-image="images/fullslides/sashimi2.jpg">
   <div>
     <section class="topWide dark">
       <h1>Introducing Sashimi</h1>
@@ -181,11 +179,11 @@ Modifications:
   </section>
 </div>
 
-<div class="slide">
-  <header>Slide showing the actual links and Rackspace endpoint</header>
-  <section>
-  </section>
+<div class="slide image" data-image="images/fullslides/setup.jpg">
+  <div>
+  </div>
 </div>
+
 
 <div class="slide">
   <header>Message over stream protocol</header>
@@ -194,7 +192,7 @@ Modifications:
       <li>Asynchronous message transport</li>
       <li>Pascal style strings</li>
     </ul>
-    <pre style="height:400px;overflow:auto;overflow-x:hidden;">
+    <pre style="height:400px;overflow:auto;overflow-x:hidden;-webkit-transform: translateX(0);">
 Queue.prototype.add = function(obj, wait_len, found_fn) {
   if (obj) { 
     if (obj.len == 0) { return }
@@ -235,7 +233,7 @@ Queue.prototype.add = function(obj, wait_len, found_fn) {
 </div>
 
 
-<div class="slide image" data-image="images/fullslides/congestion2.jpg">
+<div class="slide image" data-image="images/fullslides/congestion3.jpg">
   <div>
     <section class="topLeft dark">
       <h1>Congestion</h1>
@@ -281,10 +279,10 @@ Queue.prototype.add = function(obj, wait_len, found_fn) {
 </div>
 
 <div class="slide">
-  <header>GitHub URLs</header>
+  <header>Pre-Alpha / Post-Vapor</header>
   <section>
     <ul>
-      <li>...</li>
+      <li>http://github.com/....</li>
     </ul>
   </section>
 </div>
@@ -295,13 +293,16 @@ Queue.prototype.add = function(obj, wait_len, found_fn) {
  * THANKs
  *
 -->
-<div class="slide">
-  <section class="flex vbox boxcenter">
-    <h1>Thanks!</h1>
-    <p>Questions?</p>
-    <p>@fastandfearless<br>@cramforce</p>
-  </section>
+
+<div class="slide image" data-image="images/fullslides/crazy.jpg">
+  <div>
+    <section class="bottomWide dark">
+      <h1>Thanks! – Questions?<br>
+        @fastandfearless &amp; @cramforce</h1>
+    </section>
+  </div>
 </div>
+
       </div> <!-- slides -->
     </div> <!-- presentation -->
 <script src="js/prettify.js"></script>

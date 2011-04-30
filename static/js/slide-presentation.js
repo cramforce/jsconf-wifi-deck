@@ -212,11 +212,17 @@ var util = new Util();
     _onLoad: function() {
       this._fireEvent('onload');
       this._showFrames();
+      $(this._node).find('video').each(function() {
+        this.play();
+      });
     },
 
     _onUnload: function() {
       this._fireEvent('onunload');
       this._hideFrames();
+      $(this._node).find('video').each(function() {
+        this.pause();
+      });
     },
 
     _fireEvent: function(name) {

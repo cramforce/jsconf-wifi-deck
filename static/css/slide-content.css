@@ -767,3 +767,26 @@ section.browser-support {
   -webkit-transform-origin: 50% 75px;
   margin: 0 100px;
 }
+
+/* Title  */
+
+.title video {
+  width:1200px;
+  height:700px;
+}
+
+.title .counter {
+  display:none;
+}
+
+.title header {
+  position:absolute;
+  top:80px;
+  left:50px;
+  border:none;
+}
+
+.title header h1 {
+  color: white;
+  font-size:130px;
+}
