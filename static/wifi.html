@@ -183,46 +183,48 @@ Modifications:
 </div>
 
 <div class="slide">
-  <header>Message over stream protocol</header>
+  <header>Packet over stream protocol</header>
   <section>
     <ul>
-      <li>Asynchronous message transport</li>
+      <li>Asynchronous packet/message transport</li>
       <li>Pascal style strings</li>
     </ul>
     <pre style="height:400px;overflow:auto;overflow-x:hidden;-webkit-transform: translateX(0);">
-Queue.prototype.add = function(obj, wait_len, found_fn) {
-  if (obj) { 
-    if (obj.len == 0) { return }
-    this.queue.push(obj) 
-  }
+var Queue = function () { this.emptyBuffer = new Buffer(0); this.queue = []; }
+Queue.prototype.add = function(obj, wait_len, found_fn, test) {
   if (wait_len == 0) {
-    found_fn(new Buffer(0), "")
-    return
+    found_fn(this.emptyBuffer, "");
+    return;
   }
-  var segs = 0
-  var need = wait_len
-  for (var i in this.queue) {
-    var qe = this.queue[i] 
-    var diff = qe.len - qe.ofs
-    ++segs
-    if (diff gt;= need) { 
-      var buffer = new Buffer(wait_len)
-      var buffer_ofs = 0
-      for (var i = 0; i &lt; segs-1; ++i) {
-        /* all but last */
-        qe = this.queue.shift()
-        buffer.write(qe.data.slice(qe.ofs, qe.len), "binary", buffer_ofs)
-        buffer_ofs += qe.len - qe.ofs
-        delete qe
+  if (obj) {
+    if (obj.length == 0) { return; }
+    this.queue.push({ data: obj, ofs: 0, test: test});
+  }
+  var segs = 0;
+  var need = wait_len;
+  for (var i = 0, ql = this.queue.length; i &lt; ql; ++i) {
+    var qe = this.queue[i];
+    var diff = qe.data.length - qe.ofs;
+    ++segs;
+    if (diff &gt;= need) {
+      var buffer = new Buffer(wait_len);
+      var buffer_ofs = 0;
+      for (var i = 0; i &lt; segs-1; ++i) { /* all but last */
+        qe = this.queue.shift();
+        qe.data.copy(buffer, buffer_ofs, qe.ofs);
+        buffer_ofs += qe.data.length - qe.ofs;
+        delete qe;
       }
-      qe = this.queue[0]
-      buffer.write(qe.data.slice(qe.ofs, qe.ofs+need), "binary", buffer_ofs)
-      if (qe.ofs+need == qe.len) { delete this.queue.shift() }
-      else { this.queue[0].ofs += need }
-      found_fn(buffer, qe['test'] &amp;&amp; qe.test)
-      break
-    } 
-    need -= diff
+      qe = this.queue[0];
+      qe.data.copy(buffer, buffer_ofs, qe.ofs, qe.ofs+need);
+      if (qe.ofs+need == qe.data.length) {
+        delete this.queue.shift(); 
+      }
+      else { this.queue[0].ofs += need; }
+      found_fn(buffer, qe['test'] && qe.test);
+      break;
+    }
+    need -= diff;
   }
 }
     </pre>
