@@ -189,8 +189,7 @@ Modifications:
       <li>Asynchronous packet/message transport</li>
       <li>Pascal style strings</li>
     </ul>
-    <pre style="height:400px;overflow:auto;overflow-x:hidden;-webkit-transform: translateX(0);">
-var Queue = function () { this.emptyBuffer = new Buffer(0); this.queue = []; }
+    <pre style="height:400px;overflow:auto;overflow-x:hidden;"><div style="-webkit-transform: translateX(0);">var Queue = function () { this.emptyBuffer = new Buffer(0); this.queue = []; }
 Queue.prototype.add = function(obj, wait_len, found_fn, test) {
   if (wait_len == 0) {
     found_fn(this.emptyBuffer, "");
@@ -221,13 +220,12 @@ Queue.prototype.add = function(obj, wait_len, found_fn, test) {
         delete this.queue.shift(); 
       }
       else { this.queue[0].ofs += need; }
-      found_fn(buffer, qe['test'] && qe.test);
+      found_fn(buffer, qe['test'] &amp;&amp; qe.test);
       break;
     }
     need -= diff;
   }
-}
-    </pre>
+}</div></pre>
   </section>
 </div>
 
