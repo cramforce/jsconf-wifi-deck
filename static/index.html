@@ -189,7 +189,23 @@ Modifications:
       <li>Asynchronous packet/message transport</li>
       <li>Pascal style strings</li>
     </ul>
-    <pre style="height:400px;overflow:auto;overflow-x:hidden;"><div style="-webkit-transform: translateX(0);">var Queue = function () { this.emptyBuffer = new Buffer(0); this.queue = []; }
+    <pre style="height:400px;overflow:auto;overflow-x:hidden;"><div style="-webkit-transform: translateX(0);">net.createServer(function(stream) {
+  stream.on('data', function(data) {
+    if (header.active) {
+      queue.add(obj, header.len, header.completed);
+    } else if (packet.active) { 
+      queue.add(obj, packet.len, packet.completed);
+    }
+  });
+}).listen(server.peer.port, server.peer.host);
+</div></pre>
+  </section>
+</div>
+
+<div class="slide">
+  <header>Packet over stream protocol</header>
+  <section>
+    <pre style="height:480px;overflow:auto;overflow-x:hidden;"><div style="-webkit-transform: translateX(0);">var Queue = function () { this.emptyBuffer = new Buffer(0); this.queue = []; }
 Queue.prototype.add = function(obj, wait_len, found_fn, test) {
   if (wait_len == 0) {
     found_fn(this.emptyBuffer, "");
